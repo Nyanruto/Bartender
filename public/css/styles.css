@@ -1,20 +1,17 @@
-/* Import a professional-looking font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Define a new dark theme color palette */
 :root {
   --background-color: #121212;
   --text-color: #e0e0e0;
   --text-muted: #a0a0a0;
   --primary-color: #bb86fc;
   --primary-hover: #a56ef7;
-  --card-bg: rgba(38, 38, 38, 0.7); /* Semi-transparent for glass effect */
+  --card-bg: rgba(38, 38, 38, 0.7); 
   --card-border: rgba(255, 255, 255, 0.1);
   --error-bg: rgba(207, 102, 121, 0.1);
   --error-border: rgba(207, 102, 121, 0.5);
 }
 
-/* General body styles */
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--background-color);
@@ -28,7 +25,6 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/* Main container with glassmorphism effect */
 .container {
   background: var(--card-bg);
   padding: 40px;
@@ -42,7 +38,6 @@ body {
   width: 100%;
 }
 
-/* Header styles */
 h1 {
   color: white;
   font-weight: 700;
@@ -55,7 +50,6 @@ p {
   margin: 15px auto;
 }
 
-/* Button styles */
 .btn {
   background-color: var(--primary-color);
   color: #121212;
@@ -75,7 +69,6 @@ p {
   transform: scale(1.05);
 }
 
-/* Cocktail Info styling with fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -92,7 +85,6 @@ p {
   margin-bottom: 20px;
 }
 
-/* --- Loading Spinner --- */
 .spinner {
   border: 4px solid rgba(255, 255, 255, 0.2);
   border-left-color: var(--primary-color);
@@ -107,7 +99,6 @@ p {
   to { transform: rotate(360deg); }
 }
 
-/* Hide element utility class */
 .hidden {
   display: none;
 }
