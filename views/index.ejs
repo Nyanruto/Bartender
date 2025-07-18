@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Cocktail Finder</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="main-content">
+      <a href="/generator" class="btn action-btn">Get Another Cocktail</a>
+      <% if (cocktail) { %>
+        <div class="cocktail-info">
+          <div>
+            <img src="<%= cocktail.image %>" alt="Image of <%= cocktail.name %>">
+          </div>
+          <div>
+            <h2><%= cocktail.name %></h2>
+            <h3>Instructions:</h3>
+            <p><%= cocktail.instructions %></p>
+            <h3>Ingredients:</h3>
+            <ul>
+              <% cocktail.ingredients.forEach(ingredient => { %>
+                <li><%= ingredient %></li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+      <% } %>
+      <% if (error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+      <a href="/" style="display: block; margin-top: 30px; color: var(--text-muted);">Back to Home</a>
+    </div>
+
+    <div id="loading-spinner" class="spinner hidden"></div>
+  </div>
+
+  <script>
+    const actionButton = document.querySelector('.action-btn');
+    const mainContent = document.getElementById('main-content');
+    const spinner = document.getElementById('loading-spinner');
+
+    if (actionButton) {
+      actionButton.addEventListener('click', () => {
+        mainContent.classList.add('hidden');
+        spinner.classList.remove('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

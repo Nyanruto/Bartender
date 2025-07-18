@@ -1,0 +1,113 @@
+/* Import a professional-looking font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Define a new dark theme color palette */
+:root {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --primary-color: #bb86fc;
+  --primary-hover: #a56ef7;
+  --card-bg: rgba(38, 38, 38, 0.7); /* Semi-transparent for glass effect */
+  --card-border: rgba(255, 255, 255, 0.1);
+  --error-bg: rgba(207, 102, 121, 0.1);
+  --error-border: rgba(207, 102, 121, 0.5);
+}
+
+/* General body styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* Main container with glassmorphism effect */
+.container {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Header styles */
+h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 15px auto;
+}
+
+/* Button styles */
+.btn {
+  background-color: var(--primary-color);
+  color: #121212;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+/* Cocktail Info styling with fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cocktail-info {
+  margin-top: 40px;
+  text-align: left;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.cocktail-info img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+/* --- Loading Spinner --- */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Hide element utility class */
+.hidden {
+  display: none;
+}
