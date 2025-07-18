@@ -7,7 +7,7 @@ const port = 3000;
 const API_URL = "https://www.thecocktaildb.com/api/json/v1/1";
 
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true })); // Needed for forms
+app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
 
